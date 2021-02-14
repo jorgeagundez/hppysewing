@@ -13,7 +13,7 @@ const Cart = ({cart, setCart}) => {
                         {cart.map(product => (
                             <li>
                                 <CartProduct
-                                    key='123143'
+                                    key={product.id}
                                     product={product}
                                     cart={cart}
                                     setCart={setCart}
