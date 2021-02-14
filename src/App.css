@@ -16,7 +16,7 @@
 
 .wrapper-logo {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 .logo {
@@ -44,10 +44,14 @@
   text-align: right;
 }
 
-.products {
+.products > div {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
 }
 
-.single-product {
+.grid-product {
+  padding: 20px;
 }
 
 .footer {

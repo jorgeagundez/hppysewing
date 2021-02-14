@@ -1,7 +1,44 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
+import GridProduct from './components/GridProduct.js';
+import Cart from './components/Cart.js';
+
 import './App.css';
 
 function App() {
+
+  const [products] = useState([
+    {
+      id: 1,
+      name: 'Producto 1',
+      img: 'product1.jpg',
+      price: '12',
+      description: 'Descripción de producto 1'
+    },
+    {
+      id: 2,
+      name: 'Producto 2',
+      img: 'product2.jpg',
+      price: '12',
+      description: 'Descripción de producto 2'
+    },
+    {
+      id: 3,
+      name: 'Producto 3',
+      img: 'product3.jpg',
+      price: '12',
+      description: 'Descripción de producto 3'
+    },
+    {
+      id: 4,
+      name: 'Producto 4',
+      img: 'product4.jpg',
+      price: '12',
+      description: 'Descripción de producto 4'
+    },
+  ]);
+
+  const [cart, setCart] = useState([]);
+
   return (
     <Fragment>
       <div className="wrapper">
@@ -15,16 +52,24 @@ function App() {
               <p className="subtitle">Tienda virtual</p>
             </div>
           </div>
-          <aside className="cart">
-            <p>Carrito</p>
-          </aside>
+          <Cart
+            key='1'
+            cart={cart}
+            setCart={setCart}
+          />
         </header>
 
         <section className="products">
           <h1>Sección principal</h1>
           <div>
-            <div className="single-product">Producto 1</div>
-            <div className="single-product">Producto 2</div>
+            {products.map(product => (
+              <GridProduct
+                key={product.id}
+                product={product}
+                cart={cart}
+                setCart={setCart}
+              />
+            ))}
           </div>
         </section>
         <footer className="footer">
