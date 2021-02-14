@@ -2,9 +2,10 @@ import React from 'react';
 
 const CartProduct = ({product, cart, setCart}) => {
 
-    const {id, name, price, description} = product;
+    const {id, name, price, description, quantity} = product;
 
-    const deleteFromCart = () => {     
+    const deleteFromCart = () => {
+        product.quantity = 0;
         const products = cart.filter(product => product.id !== id);
         setCart(products);
     }
@@ -14,6 +15,7 @@ const CartProduct = ({product, cart, setCart}) => {
             <p>{name}</p>
             <p>Precio: {price} €</p>
             <p>{description}</p>
+            <p>Cantidad: {quantity}</p>
             <button
                 onClick={() => deleteFromCart()}
             >Borrar del carrito</button>

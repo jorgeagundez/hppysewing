@@ -4,32 +4,27 @@ import CartProduct from './CartProduct.js';
 const Cart = ({cart, setCart}) => {
 
     return (
-        <Fragment>
-            <aside className="cart">
-                {cart.length > 0
-                ?
-                    <Fragment>
-                    <ul>
-                        {cart.map(product => (
-                            <li>
-                                <CartProduct
-                                    key={product.id}
-                                    product={product}
-                                    cart={cart}
-                                    setCart={setCart}
-                                />
-                            </li>
-                        ))}
-                    </ul>
-                    <button>Realizar pedido</button>
-                    </Fragment>
-                :
-                    <p>No hay productos en el carrito</p>
-                }
-
-                
-            </aside>
-        </Fragment>
+        <aside className="cart">
+            {cart.length > 0
+            ?
+                <Fragment>
+                <ul>
+                    {cart.map(product => (
+                        <li key={product.id}>
+                            <CartProduct
+                                product={product}
+                                cart={cart}
+                                setCart={setCart}
+                            />
+                        </li>
+                    ))}
+                </ul>
+                <button>Realizar pedido</button>
+                </Fragment>
+            :
+                <p>No hay productos en el carrito</p>
+            }
+        </aside>
     )
 }
 

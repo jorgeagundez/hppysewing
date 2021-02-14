@@ -1,14 +1,33 @@
 import React from 'react';
 
-const GridProduct = ({product, cart, setCart}) => {
+const GridProduct = ({product, updateProducts, cart, setCart}) => {
 
     const {name, img, price, description} = product;
 
-    const addToCart = () => {        
-        setCart([
-            ...cart,
-            product
-        ]);
+    const setProductQuantity = () => {
+        if (product.quantity === undefined) {
+            product.quantity = 1;
+        } else {
+            product.quantity++;
+        }
+    }
+
+    const addToCart = () => {
+
+        setProductQuantity();
+
+        let productIsAlready = cart.includes(product);
+
+        if (!productIsAlready) {
+            setCart([
+                ...cart,
+                product
+            ]);
+        } else {
+            setCart([
+                ...cart
+            ]);
+        }
     }
 
     return (

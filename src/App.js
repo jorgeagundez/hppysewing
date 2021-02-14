@@ -53,7 +53,6 @@ function App() {
             </div>
           </div>
           <Cart
-            key='1'
             cart={cart}
             setCart={setCart}
           />
