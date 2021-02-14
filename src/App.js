@@ -1,12 +1,11 @@
 import React, { Fragment } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
     <Fragment>
       <header className="header">
-        <img src={logo} className="logo" alt="logo" />
+        <img src={process.env.PUBLIC_URL + '/img/logo.png'} className="logo" alt="logo" />
         <p>Bienvenidos a Hppysewing</p>
       </header>
       <aside>
