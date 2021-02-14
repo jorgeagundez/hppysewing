@@ -1,3 +1,5 @@
+/* utilities */
+
 * {
     box-sizing: border-box;
 }
@@ -11,10 +13,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.contenedor {
-    background-color: white;
+.container {
+    background-color: red;
     margin: 0 auto;
-    max-width: 1000px;
+    max-width: 1250px;
     min-height: calc( 100vh - 20px );
     padding: 20px 30px 0 30px;
 }

@@ -4,22 +4,22 @@ import './App.css';
 function App() {
   return (
     <Fragment>
-      <div className="contenedor">
+      <div className="container">
         <header className="header">
           <img src={process.env.PUBLIC_URL + '/img/logo.png'} className="logo" alt="logo" />
           <p>Bienvenidos a Hppysewing</p>
         </header>
-        <aside>
+        <aside className="cart">
           <p>Carrito</p>
         </aside>
-        <section>
+        <section className="products">
           <h1>Sección principal</h1>
-          <div className="productos">
-            <div>Producto 1</div>
-            <div>Producto 2</div>
+          <div>
+            <div className="single-product">Producto 1</div>
+            <div className="single-product">Producto 2</div>
           </div>
         </section>
-        <footer>
+        <footer className="footer">
           <nav>
             Redes sociales
           </nav>

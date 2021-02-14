@@ -1,12 +1,32 @@
+/* App */
+
+.header {
+  background-color: blue;
+  font-size: calc(10px + 2vmin);
+}
+
 .logo {
   height: 40vmin;
   pointer-events: none;
 }
 
-.header {
-  background-color: #fffff;
-  font-size: calc(10px + 2vmin);
+.cart {
+  background-color: greenyellow;
 }
+
+.products {
+  background-color: khaki;
+}
+
+.single-product {
+  background-color: grey;
+}
+
+.footer {
+  background-color: hotpink;
+}
+
+/* Atoms */
 
 .button {
   color: #61dafb;
