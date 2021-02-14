@@ -1,0 +1,13 @@
+.logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.header {
+  background-color: #fffff;
+  font-size: calc(10px + 2vmin);
+}
+
+.button {
+  color: #61dafb;
+}
