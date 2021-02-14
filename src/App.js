@@ -60,7 +60,7 @@ function App() {
         </header>
 
         <section className="products">
-          <h1>Sección principal</h1>
+          <h1>Productos disponibles</h1>
           <div>
             {products.map(product => (
               <GridProduct
