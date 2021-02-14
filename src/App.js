@@ -4,14 +4,22 @@ import './App.css';
 function App() {
   return (
     <Fragment>
-      <div className="container">
+      <div className="wrapper">
         <header className="header">
-          <img src={process.env.PUBLIC_URL + '/img/logo.png'} className="logo" alt="logo" />
-          <p>Bienvenidos a Hppysewing</p>
+          <div className="wrapper-logo">
+            <div className="logo">
+              <img src={process.env.PUBLIC_URL + '/img/logo.png'} alt="logo" />
+            </div>
+            <div className="u-wrapper-padding">
+              <p className="title">Hppysewing</p>
+              <p className="subtitle">Tienda virtual</p>
+            </div>
+          </div>
+          <aside className="cart">
+            <p>Carrito</p>
+          </aside>
         </header>
-        <aside className="cart">
-          <p>Carrito</p>
-        </aside>
+
         <section className="products">
           <h1>Sección principal</h1>
           <div>

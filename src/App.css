@@ -1,33 +1,59 @@
-/* App */
+/* APP COMPONENT */
 
+/* HEADER */
 .header {
-  background-color: blue;
-  font-size: calc(10px + 2vmin);
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width:768px) {
+    .header {
+      flex-direction: row;
+      padding-bottom: 20px;
+      border-bottom: 1px solid gainsboro;
+    }
+}
+
+.wrapper-logo {
+  display: flex;
+  justify-content: start;
 }
 
 .logo {
-  height: 40vmin;
+  max-width: 150px;
+}
+
+.logo img {
   pointer-events: none;
+  min-width: 80px;
+  min-height: 80px;
+}
+
+.title {
+  font-size: calc(20px + 2vmin);
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  font-size: calc(10px + 2vmin);
+  margin-top: 0;
 }
 
 .cart {
-  background-color: greenyellow;
+  flex: 1;
+  text-align: right;
 }
 
 .products {
-  background-color: khaki;
 }
 
 .single-product {
-  background-color: grey;
 }
 
 .footer {
-  background-color: hotpink;
 }
 
 /* Atoms */
 
 .button {
-  color: #61dafb;
 }
