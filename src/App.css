@@ -1,13 +1,69 @@
-.logo {
-  height: 40vmin;
-  pointer-events: none;
+/* APP COMPONENT */
+
+/* HEADER */
+.header {
+  display: flex;
+  flex-direction: column;
 }
 
-.header {
-  background-color: #fffff;
-  font-size: calc(10px + 2vmin);
+@media screen and (min-width:768px) {
+    .header {
+      flex-direction: row;
+      padding-bottom: 20px;
+      border-bottom: 1px solid gainsboro;
+    }
 }
+
+.wrapper-logo {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.logo {
+  max-width: 150px;
+}
+
+.logo img {
+  pointer-events: none;
+  min-width: 80px;
+  min-height: 80px;
+}
+
+.title {
+  font-size: calc(20px + 2vmin);
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  font-size: calc(10px + 2vmin);
+  margin-top: 0;
+}
+
+.cart {
+  flex: 1;
+  text-align: right;
+}
+
+.products > div {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width:768px) {
+  .products > div {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.grid-product {
+  padding: 20px;
+}
+
+.footer {
+}
+
+/* Atoms */
 
 .button {
-  color: #61dafb;
 }
