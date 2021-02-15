@@ -11,28 +11,28 @@ function App() {
       id: 1,
       name: 'Producto 1',
       img: 'product1.jpg',
-      price: '12',
+      price: 12,
       description: 'Descripción de producto 1'
     },
     {
       id: 2,
       name: 'Producto 2',
       img: 'product2.jpg',
-      price: '12',
+      price: 12,
       description: 'Descripción de producto 2'
     },
     {
       id: 3,
       name: 'Producto 3',
       img: 'product3.jpg',
-      price: '12',
+      price: 12,
       description: 'Descripción de producto 3'
     },
     {
       id: 4,
       name: 'Producto 4',
       img: 'product4.jpg',
-      price: '12',
+      price: 12,
       description: 'Descripción de producto 4'
     },
   ]);
