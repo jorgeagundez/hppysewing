@@ -1,6 +1,6 @@
 import React from 'react';
 
-const GridProduct = ({product, updateProducts, cart, setCart}) => {
+const GridProduct = ({product, cart, setCart}) => {
 
     const {name, img, price, description} = product;
 

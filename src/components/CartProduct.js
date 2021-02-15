@@ -6,7 +6,32 @@ const CartProduct = ({product, cart, setCart}) => {
 
     const deleteFromCart = () => {
         product.quantity = 0;
-        const products = cart.filter(product => product.id !== id);
+        const newCart = cart.filter(product => product.id !== id);
+        setCart(newCart);
+    }
+
+    const addOne = () => {
+        const newCart = cart.map(product => {
+            if (product.id === id) {
+                product.quantity++;
+            }
+
+            return product;
+        });
+
+        setCart(newCart);
+    }
+
+    const removeOne = () => {
+        const newCart = cart.map(product => {
+            if (product.id === id) {
+                product.quantity--;
+            }
+
+            return product;
+        });
+
+        const products = newCart.filter(product => product.quantity > 0);
         setCart(products);
     }
 
@@ -19,6 +44,12 @@ const CartProduct = ({product, cart, setCart}) => {
             <button
                 onClick={() => deleteFromCart()}
             >Borrar del carrito</button>
+            <button
+                onClick={() => removeOne()}
+            >Quitar 1</button>
+            <button
+                onClick={() => addOne()}
+            >Añadir 1</button>
         </div>
     )
 }
