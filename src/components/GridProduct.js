@@ -4,6 +4,8 @@ const GridProduct = ({product, cart, setCart}) => {
 
     const {name, img, price, description} = product;
 
+
+    // TODO: create a State for CartProduct to manage Quantity
     const setProductQuantity = () => {
         if (product.quantity === undefined) {
             product.quantity = 1;
