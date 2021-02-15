@@ -46,10 +46,10 @@ const CartProduct = ({product, cart, setCart}) => {
             >Borrar del carrito</button>
             <button
                 onClick={() => removeOne()}
-            >Quitar 1</button>
+            >-</button>
             <button
                 onClick={() => addOne()}
-            >Añadir 1</button>
+            >+</button>
         </div>
     )
 }
