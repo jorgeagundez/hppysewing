@@ -20,22 +20,24 @@
 }
 
 .logo {
+  min-width: 50px;
   max-width: 150px;
+  align-self: center;
 }
 
 .logo img {
   pointer-events: none;
-  min-width: 80px;
-  min-height: 80px;
+  /* min-width: 80px;
+  min-height: 80px; */
 }
 
 .title {
-  font-size: calc(20px + 2vmin);
+  font-size: calc(1rem + 2vmin);
   margin-bottom: 5px;
 }
 
 .subtitle {
-  font-size: calc(10px + 2vmin);
+  font-size: calc(.5 + 2vmin);
   margin-top: 0;
 }
 
