@@ -12,31 +12,47 @@ const Cart = ({cart, setCart}) => {
         return total;
     }
 
+    const getTotalItems = () => {
+        let items = 0;
+        cart.forEach(product => (
+            items = items + product.quantity
+        ));
+
+        return items;
+    }
+
     return (
         <aside className="cart">
-            {cart.length > 0
-            ?
+            <div className="icon">
+                <i class="fas fa-shopping-cart"></i><span>( {getTotalItems()} )</span>
+            </div>
+            <div className="items">
                 <Fragment>
-                    <ul>
-                        {cart.map(product => (
-                            <li key={product.id}>
-                                <CartProduct
-                                    product={product}
-                                    cart={cart}
-                                    setCart={setCart}
-                                />
-                            </li>
-                        ))}
-                    </ul>
-                    <div>
-                        <p>Precio total: {getTotalPrice()} €</p>
-                    </div>
+                {cart.length > 0
+                ?
+                    <Fragment>
+                        <ul>
+                            {cart.map(product => (
+                                <li key={product.id}>
+                                    <CartProduct
+                                        product={product}
+                                        cart={cart}
+                                        setCart={setCart}
+                                    />
+                                </li>
+                            ))}
+                        </ul>
+                        <div>
+                            <p>Precio total: {getTotalPrice()} €</p>
+                        </div>
 
-                    <button>Realizar pedido</button>
+                        <button>Realizar pedido</button>
+                    </Fragment>
+                :
+                    <p>No hay productos en el carrito</p>
+                }
                 </Fragment>
-            :
-                <p>No hay productos en el carrito</p>
-            }
+            </div>
         </aside>
     )
 }
