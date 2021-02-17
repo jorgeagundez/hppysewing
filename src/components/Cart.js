@@ -1,7 +1,9 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import CartProduct from './CartProduct.js';
 
 const Cart = ({cart, setCart}) => {
+
+    const [toggle, setToggle] = useState(false);
 
     const getTotalPrice = () => {
         let total = 0;
@@ -21,12 +23,21 @@ const Cart = ({cart, setCart}) => {
         return items;
     }
 
+    const toggleClass = () => {
+        setToggle(!toggle);
+    }
+
     return (
         <aside className="cart">
-            <div className="icon">
-                <i class="fas fa-shopping-cart"></i><span>( {getTotalItems()} )</span>
-            </div>
-            <div className="items">
+            <button
+                className="icon"
+                onClick={() => toggleClass()}
+            >
+                <i className="fas fa-shopping-cart"></i><span>( {getTotalItems()} )</span>
+            </button>
+            <div
+                className={ toggle ? "items open" : "items"}
+            >
                 <Fragment>
                 {cart.length > 0
                 ?

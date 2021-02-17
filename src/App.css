@@ -64,6 +64,7 @@
 .cart {
   flex: 1;
   text-align: right;
+  position: relative;
 }
 
 .cart .icon {
@@ -77,6 +78,18 @@
 
 .cart .items {
   display: none;
+}
+
+.cart .items.open {
+  background: rgb(101, 194, 101);
+  bottom: 0;
+  display: block;
+  height: 100vh;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 50px;
+  width: 100%;
 }
 
 
