@@ -86,6 +86,7 @@
   display: block;
   height: 100vh;
   left: 0;
+  overflow-y: scroll;
   position: absolute;
   right: 0;
   top: 50px;
