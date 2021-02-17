@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import GridProduct from './components/GridProduct.js';
 import Cart from './components/Cart.js';
 
@@ -37,7 +37,21 @@ function App() {
     },
   ]);
 
-  const [cart, setCart] = useState([]);
+
+  let cartInicial = JSON.parse(localStorage.getItem('cart'));
+  if (!cartInicial) {
+    cartInicial = [];
+  }
+
+  const [cart, setCart] = useState(cartInicial);
+
+  useEffect(() => {
+    if (cartInicial) {
+      localStorage.setItem('cart', JSON.stringify(cart));
+    } else {
+      localStorage.setItem('cart', []);
+    }
+  }, [cart, cartInicial])
 
   return (
     <Fragment>
