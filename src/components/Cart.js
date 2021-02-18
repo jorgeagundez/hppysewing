@@ -28,12 +28,12 @@ const Cart = ({cart, setCart}) => {
     }
 
     return (
-        <aside className="cart">
+        <div className="cart">
             <button
-                className="icon"
+                className="button icon"
                 onClick={() => toggleClass()}
             >
-                <i className="fas fa-shopping-cart"></i><span>( {getTotalItems()} )</span>
+                <i className="fas fa-shopping-cart"></i><span>{getTotalItems()}</span>
             </button>
             <div
                 className={ toggle ? "items open" : "items"}
@@ -64,7 +64,7 @@ const Cart = ({cart, setCart}) => {
                 }
                 </Fragment>
             </div>
-        </aside>
+        </div>
     )
 }
 

@@ -1,41 +1,46 @@
 /* APP COMPONENT */
 
+
+
 /* HEADER */
 /* ************ */
 
 :root {
- --header-height: 150px;
+ --header-height: 80px;
 }
 
 .header {
+  background-color: white;
+  border-bottom: 1px solid lightgray;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   height: var(--header-height);
-  position: fixed;
-  top: 0;
+  justify-content: flex-start;
   left: 0;
+  overflow: hidden;
+  position: fixed;
   right: 0;
-  background-color: lightgray;
+  top: 0;
 }
 
 @media screen and (min-width:768px) {
     .header {
       position: relative;
-      flex-direction: row;
+      /* flex-direction: row; */
       padding-bottom: 20px;
       border-bottom: 1px solid gainsboro;
     }
 }
 
-.wrapper-logo {
-  display: flex;
-  justify-content: flex-start;
+.header > div {
+  align-self: center;
 }
 
 .logo {
+  border-right: 1px solid lightgray;
+  max-width: 70px;
   min-width: 50px;
-  max-width: 100px;
-  align-self: center;
+  padding: 10px;
 }
 
 @media screen and (min-width:768px) {
@@ -46,6 +51,9 @@
 
 .logo img {
   pointer-events: none;
+}
+
+.name {
 }
 
 .title {
@@ -68,8 +76,8 @@
 }
 
 .cart .icon {
-  padding: 10px 30px;
-  font-size: 1.5rem;
+  font-size: 1rem;
+  padding-right: 1rem;
 }
 
 .cart .icon span {
@@ -81,16 +89,20 @@
 }
 
 .cart .items.open {
-  background: rgb(101, 194, 101);
+  background: white;
   bottom: 0;
   display: block;
   height: 100vh;
   left: 0;
   overflow-y: scroll;
-  position: absolute;
-  right: 0;
-  top: 50px;
   padding-bottom: 10rem;
+  position: fixed;
+  right: 0;
+  top: 80px;
+}
+
+.cart li {
+  border-bottom: 1px solid lightgray;
 }
 
 
@@ -134,4 +146,5 @@ section.products > div {
 /* ********************* */
 
 .button {
+
 }

@@ -57,14 +57,12 @@ function App() {
     <Fragment>
       <div className="wrapper">
         <header className="header">
-          <div className="wrapper-logo">
-            <div className="logo">
-              <img src={process.env.PUBLIC_URL + '/img/logo.png'} alt="logo" />
-            </div>
-            <div className="u-wrapper-padding">
-              <p className="title">Hppysewing</p>
-              <p className="subtitle">Tienda virtual</p>
-            </div>
+          <div className="logo">
+            <img src={process.env.PUBLIC_URL + '/img/logo.png'} alt="logo" />
+          </div>
+          <div className="u-wrapper-padding">
+            <p className="title">Hppysewing</p>
+            <p className="subtitle">Tienda virtual</p>
           </div>
           <Cart
             cart={cart}
