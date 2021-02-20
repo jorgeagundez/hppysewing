@@ -5,7 +5,16 @@ import Cart from './components/Cart.js';
 import './App.css';
 
 function App() {
+  
+  let manualVersion = ['20','02','2021','20','54'];
+  const calculateDataBaseVersion = (manualVersion) => {
+    let version = manualVersion.reduce((a, b) => a + b);
+    return (
+      version
+    )
+  }
 
+  const [dataBaseVersion] = useState(calculateDataBaseVersion(manualVersion));
   const [products] = useState([
     {
       id: 1,
@@ -39,19 +48,23 @@ function App() {
 
 
   let cartInicial = JSON.parse(localStorage.getItem('cart'));
-  if (!cartInicial) {
+  let cartInicialVersion = JSON.parse(localStorage.getItem('cartVersion'));
+
+  if (!cartInicial || cartInicialVersion !== dataBaseVersion) {
     cartInicial = [];
   }
 
   const [cart, setCart] = useState(cartInicial);
+  const [cartVersion] = useState(dataBaseVersion);
 
   useEffect(() => {
     if (cartInicial) {
       localStorage.setItem('cart', JSON.stringify(cart));
+      localStorage.setItem('cartVersion', JSON.stringify(cartVersion));
     } else {
       localStorage.setItem('cart', []);
     }
-  }, [cart, cartInicial])
+  }, [cart, cartInicial, cartVersion])
 
   return (
     <Fragment>

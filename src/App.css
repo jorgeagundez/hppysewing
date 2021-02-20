@@ -14,14 +14,8 @@
   }
 }
 
-/* @media screen and (min-width:768px) {
-  :root {
-  --header-height: 150px;
-  }
-} */
-
 .header {
-  background-color: white;
+  background-color: rgb(238, 234, 234);
   border-bottom: 1px solid lightgray;
   display: flex;
   flex-direction: row;
@@ -36,8 +30,9 @@
 
 @media screen and (min-width:768px) {
     .header {
-      position: relative;
+      background-color: white;
       border-bottom: 1px solid gainsboro;
+      position: relative;
     }
 }
 
@@ -62,9 +57,6 @@
   pointer-events: none;
 }
 
-.name {
-}
-
 .title {
   font-size: calc(1rem + 2vmin);
   margin: 0;
@@ -87,8 +79,8 @@
 
 .cart {
   flex: 1;
-  text-align: right;
   position: relative;
+  text-align: right;
 }
 
 .cart .icon {
@@ -101,13 +93,9 @@
 }
 
 .cart .items {
-  display: none;
-}
-
-.cart .items.open {
-  background: white;
+  background-color: rgb(238, 234, 234);
   bottom: 0;
-  display: block;
+  display: none;
   height: 100vh;
   left: 0;
   overflow-y: scroll;
@@ -117,16 +105,25 @@
   top: var(--header-height);
 }
 
-/* @media screen and (min-width:768px) {
-  .cart .items.open {
-    top: 130px;
+@media screen and (min-width:768px) {
+  .cart .items {
+    position: fixed;
+    top: var(--header-height);
+    bottom: revert;
+    height: auto;
+    padding-bottom: 0;
+    left: revert;
+    right: revert;
   }
-} */
+}
+
+.cart .items.open {
+  display: block;
+}
 
 .cart li {
   border-bottom: 1px solid lightgray;
 }
-
 
 /* Section Grid Products */
 /* ********************* */
