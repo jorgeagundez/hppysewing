@@ -2,7 +2,7 @@ import React from 'react';
 
 const CartProduct = ({product, cart, setCart}) => {
 
-    const {id, name, price, description, quantity} = product;
+    const {id, name, img, price, description, quantity} = product;
 
     const deleteFromCart = () => {
         product.quantity = 0;
@@ -36,20 +36,25 @@ const CartProduct = ({product, cart, setCart}) => {
     }
 
     return (
-        <div className="grid-product">
-            <p>{name}</p>
-            <p>Precio: {price} €</p>
-            <p>{description}</p>
-            <p>Cantidad: {quantity}</p>
-            <button
-                onClick={() => deleteFromCart()}
-            >Borrar del carrito</button>
-            <button
-                onClick={() => removeOne()}
-            >-</button>
-            <button
-                onClick={() => addOne()}
-            >+</button>
+        <div className="cart-products">
+            <div className="product-img">
+                <img src={process.env.PUBLIC_URL + '/img/' + img} alt="logo" />
+            </div>
+            <div className="cart-data">
+                <p className="name">{name}</p>
+                <p className="description">{description}</p>
+                <p>Precio <strong>{price} €</strong> <span>(IVA inc.)</span></p>
+                <p>Cantidad: <strong>{quantity} </strong>{quantity === 1 ? 'unidad' : 'unidades'}</p>
+                <button
+                    onClick={() => deleteFromCart()}
+                >Borrar del carrito</button>
+                <button
+                    onClick={() => removeOne()}
+                >-</button>
+                <button
+                    onClick={() => addOne()}
+                >+</button>
+            </div>
         </div>
     )
 }

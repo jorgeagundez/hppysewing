@@ -4,13 +4,21 @@
 
 /* HEADER */
 /* ************ */
-
+:root {
+  --header-height: 80px;
+}
 
 @media screen and (min-width:480px) {
   :root {
   --header-height: 100px;
   }
 }
+
+/* @media screen and (min-width:768px) {
+  :root {
+  --header-height: 150px;
+  }
+} */
 
 .header {
   background-color: white;
@@ -29,8 +37,6 @@
 @media screen and (min-width:768px) {
     .header {
       position: relative;
-      /* flex-direction: row; */
-      padding-bottom: 20px;
       border-bottom: 1px solid gainsboro;
     }
 }
@@ -48,7 +54,7 @@
 
 @media screen and (min-width:768px) {
     .logo {
-      max-width: 100px;
+      max-width: var(--header-height);
     }
 }
 
@@ -64,24 +70,16 @@
   margin: 0;
 }
 
-
-.subtitle {
-  font-size: calc(.5 + 1.5vmin);
-  margin: 0;
-}
-
-@media screen and (min-width:480px) {
-  .title {
-    font-size: calc(1rem + 2vmin);
-  }
-}
-
 @media screen and (min-width:768px) {
   .title {
     font-size: 2rem;
   }
 }
 
+.subtitle {
+  font-size: calc(.5 + 1.5vmin);
+  margin: 0;
+}
 
 
 /* Section Grid Products */
@@ -116,8 +114,14 @@
   padding-bottom: 10rem;
   position: fixed;
   right: 0;
-  top: 80px;
+  top: var(--header-height);
 }
+
+/* @media screen and (min-width:768px) {
+  .cart .items.open {
+    top: 130px;
+  }
+} */
 
 .cart li {
   border-bottom: 1px solid lightgray;
@@ -152,6 +156,61 @@ section.products > div {
 .grid-product {
   padding: 20px;
 }
+
+.cart-products {
+  display: flex;
+  justify-content: center;
+}
+
+.cart-products .product-img {
+  max-width: 100px;
+  padding-top: 2rem;
+  padding-left: 20px;
+}
+
+.cart-products .product-img img {
+  border-radius: 5px;
+}
+
+@media screen and (min-width:480px) {
+  .cart-products .product-img {
+    padding: 2rem 0 0 0;
+  }
+}
+
+.cart-products .cart-data {
+  flex-basis: 80%;
+  padding: 2rem;
+  text-align: left;
+}
+
+@media screen and (min-width:480px) {
+  .cart-products .cart-data {
+    flex-basis: 60%;
+    padding: 2rem 1rem 2rem 3rem;
+  }
+}
+
+.cart-data p {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+.cart-data p span {
+  font-size: 0.7rem;
+}
+
+.cart-data .name {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.cart-data .description {
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+}
+
 
 /* Section Footer */
 /* ********************* */

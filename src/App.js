@@ -9,31 +9,31 @@ function App() {
   const [products] = useState([
     {
       id: 1,
-      name: 'Producto 1',
+      name: 'Mini-neceser Flor de Azahar',
       img: 'product1.jpg',
       price: 12,
-      description: 'Descripción de producto 1'
+      description: 'Mini-neceser con tela vaquera reciclada en el exterior y algodon azul marino en el interior. Tamaño 13x9x5cm'
     },
     {
       id: 2,
-      name: 'Producto 2',
+      name: 'Mini-neceser Sandías',
       img: 'product2.jpg',
       price: 12,
-      description: 'Descripción de producto 2'
+      description: 'Mini-neceser con tela de lona de algodón malva en el exterior y estampado de sandías en la solapa e interior. Tamaño 13x9x5cm'
     },
     {
       id: 3,
-      name: 'Producto 3',
+      name: 'Mini-neceser grecas cielo',
       img: 'product3.jpg',
       price: 12,
-      description: 'Descripción de producto 3'
+      description: 'Mini-neceser con tela de lona de algodón mostaza en el exterior y estampado de gracas azul en la solapa e interior. Tamaño 13x9x5cm'
     },
     {
       id: 4,
-      name: 'Producto 4',
+      name: 'Mini-neceser corazones',
       img: 'product4.jpg',
       price: 12,
-      description: 'Descripción de producto 4'
+      description: 'Mini-neceser con tela de lona de algodón blanco roto en el exterior y estampado de corazones en la solapa e interior. Tamaño 13x9x5cm'
     },
   ]);
 
