@@ -5,8 +5,11 @@
 /* HEADER */
 /* ************ */
 
-:root {
- --header-height: 80px;
+
+@media screen and (min-width:480px) {
+  :root {
+  --header-height: 100px;
+  }
 }
 
 .header {
@@ -45,7 +48,7 @@
 
 @media screen and (min-width:768px) {
     .logo {
-      max-width: 150px;
+      max-width: 100px;
     }
 }
 
@@ -58,13 +61,28 @@
 
 .title {
   font-size: calc(1rem + 2vmin);
-  margin-bottom: 5px;
+  margin: 0;
 }
 
+
 .subtitle {
-  font-size: calc(.5 + 2vmin);
-  margin-top: 0;
+  font-size: calc(.5 + 1.5vmin);
+  margin: 0;
 }
+
+@media screen and (min-width:480px) {
+  .title {
+    font-size: calc(1rem + 2vmin);
+  }
+}
+
+@media screen and (min-width:768px) {
+  .title {
+    font-size: 2rem;
+  }
+}
+
+
 
 /* Section Grid Products */
 /* ********************* */

@@ -60,7 +60,7 @@ function App() {
           <div className="logo">
             <img src={process.env.PUBLIC_URL + '/img/logo.png'} alt="logo" />
           </div>
-          <div className="u-wrapper-padding">
+          <div className="name u-wrapper-padding">
             <p className="title">Hppysewing</p>
             <p className="subtitle">Tienda virtual</p>
           </div>
