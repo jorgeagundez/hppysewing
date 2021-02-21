@@ -37,7 +37,10 @@ const Cart = ({cart, setCart, toggle, toggleClass}) => {
                 className="button icon"
                 onClick={() => toggleClass()}
             >
-                <i className="fas fa-shopping-cart"></i><span>{getTotalItems()}</span>
+                <i className={ toggle ? 'fas fa-shopping-cart hide' : 'fas fa-shopping-cart '}>
+                    <span>{getTotalItems()}</span>
+                </i>
+                <span className={ toggle ? '' : 'hide'}>X</span>
             </button>
             <div
                 className={ toggle ? "wrapper items open" : "wrapper items"}

@@ -31,6 +31,7 @@
   position: fixed;
   right: 0;
   top: 0;
+  z-index: 1;
 }
 
 @media screen and (min-width:768px) {
@@ -91,6 +92,11 @@
 .cart .icon {
   font-size: 1rem;
   padding: 2rem;
+}
+
+.cart .icon > span {
+  font-size: 1.5rem;
+  font-weight: lighter;
 }
 
 .cart .icon span {
@@ -245,8 +251,9 @@ section.products > div {
 }
 
 .grid-product {
-  padding: 0px 0px 50px 0px;
   flex: 1 0 50%;
+  margin-bottom: 50px;
+  padding: 0px 0px 50px 0px;
   position: relative;
 }
 

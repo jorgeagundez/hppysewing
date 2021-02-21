@@ -109,11 +109,11 @@ function App() {
             ))}
           </div>
         </section>
-        <footer className="footer">
+        {/* <footer className="footer">
           <nav>
             Redes sociales
           </nav>
-        </footer>
+        </footer> */}
       </div>
     </Fragment>
   );
