@@ -5,6 +5,11 @@ import Cart from './components/Cart.js';
 import './App.css';
 
 function App() {
+
+  const [toggle, setToggle] = useState(false);
+  const toggleClass = () => {
+    setToggle(!toggle);
+  }
   
   let manualVersion = ['20','02','2021','20','54'];
   const calculateDataBaseVersion = (manualVersion) => {
@@ -84,10 +89,14 @@ function App() {
           <Cart
             cart={cart}
             setCart={setCart}
+            toggle={toggle}
+            toggleClass={toggleClass}
           />
         </header>
 
-        <section className="products">
+        <section 
+          className={ toggle ? "products hide" : "products"}
+        >
           <h1 className="h1">Productos disponibles</h1>
           <div>
             {products.map(product => (

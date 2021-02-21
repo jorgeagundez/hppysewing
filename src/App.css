@@ -10,6 +10,7 @@
 :root {
   --header-height: 80px;
   --cta-pp-color: #ffa800;
+  --cta-sec-color: #4fb3ec;
 }
 
 @media screen and (min-width:480px) {
@@ -204,11 +205,18 @@
 }
 
 .cta-pp {
-  background: var(--cta-pp-color);
   border-radius: 5px;
   color: white;
   font-weight: bold;
   padding: 12px 15px 12px 15px;
+}
+
+.cta-pp.mostaza {
+  background-color: var(--cta-pp-color);
+}
+
+.cta-pp.bluesky {
+  background-color: var(--cta-sec-color);
 }
 
 @media screen and (min-width:768px) {
@@ -237,8 +245,9 @@ section.products > div {
 }
 
 .grid-product {
-  padding: 0px;
+  padding: 0px 0px 50px 0px;
   flex: 1 0 50%;
+  position: relative;
 }
 
 @media screen and (min-width:480px) {
@@ -246,13 +255,13 @@ section.products > div {
     flex-direction: row;
   }
   .grid-product {
-    padding: 10px;
+      padding: 10px 10px 50px 10px;
   }
 }
 
 @media screen and (min-width:768px) {
   .grid-product {
-    padding: 0px;
+    padding: 20px 20px 50px 20px;
     flex: 1;
   }
 }
@@ -267,10 +276,9 @@ section.products > div {
   text-transform: uppercase;
 }
 
-@media screen and (min-width:768px) {
-  .grid-product {
-    padding: 20px;
-  }
+.grid-product button {
+  position: absolute;
+  bottom: 0;
 }
 
 

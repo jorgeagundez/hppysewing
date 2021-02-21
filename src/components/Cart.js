@@ -1,9 +1,8 @@
 import React, { Fragment, useState } from 'react';
 import CartProduct from './CartProduct.js';
 
-const Cart = ({cart, setCart}) => {
+const Cart = ({cart, setCart, toggle, toggleClass}) => {
 
-    const [toggle, setToggle] = useState(false);
     const freeShipping = 30;
 
     const getTotalPrice = () => {
@@ -30,10 +29,6 @@ const Cart = ({cart, setCart}) => {
         ));
 
         return items;
-    }
-
-    const toggleClass = () => {
-        setToggle(!toggle);
     }
 
     return (
@@ -69,7 +64,7 @@ const Cart = ({cart, setCart}) => {
                         </div>
 
                         <button
-                            className="cta-pp"
+                            className="cta-pp mostaza"
                         >Realizar pedido</button>
                     </Fragment>
                 :

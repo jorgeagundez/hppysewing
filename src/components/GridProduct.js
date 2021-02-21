@@ -45,6 +45,7 @@ const GridProduct = ({product, cart, setCart}) => {
             <p>{description}</p>
             <button
                 onClick={() => addToCart()}
+                className="cta-pp bluesky"
             >Añadir al carrito</button>
         </div>
     )
