@@ -2,7 +2,7 @@ import React from 'react';
 
 const CartProduct = ({product, cart, setCart}) => {
 
-    const {id, name, img, price, description, quantity} = product;
+    const {id, name, type, img, price, description, quantity} = product;
 
     const deleteFromCart = () => {
         product.quantity = 0;
@@ -41,7 +41,7 @@ const CartProduct = ({product, cart, setCart}) => {
                 <img src={process.env.PUBLIC_URL + '/img/' + img} alt="logo" />
             </div>
             <div className="cart-data">
-                <p className="name">{name}</p>
+                <p className="name">{type} - {name}</p>
                 <p className="description">{description}</p>
                 <p>Precio: <strong>{price} €</strong> / unidad</p>
                 <p>Cantidad: <strong>{quantity} </strong>{quantity === 1 ? 'unidad' : 'unidades'}</p>

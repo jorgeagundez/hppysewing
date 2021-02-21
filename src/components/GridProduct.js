@@ -36,11 +36,12 @@ const GridProduct = ({product, cart, setCart}) => {
         <div className="grid-product">
             <p
                 className="name"
-            ><span>{type}:</span> {name}</p>
+            >{name}</p>
             <div className="product-img">
                 <img src={process.env.PUBLIC_URL + '/img/' + img} alt="logo" />
             </div>
-            <p>Precio: {price} €</p>
+            <p>Tipo: {type}</p>
+            <p>Precio: <strong>{price} €</strong></p>
             <p>{description}</p>
             <button
                 onClick={() => addToCart()}

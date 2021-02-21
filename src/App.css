@@ -179,7 +179,7 @@
   font-size: 0.9rem;
 }
 
-.name {
+.cart-data .name {
   font-weight: bold;
   font-size: 1rem;
 }
@@ -233,21 +233,33 @@ section.products {
 section.products > div {
   display: flex;
   flex-direction: column;
-}
-
-@media screen and (min-width:768px) {
-  section.products > div {
-    flex-direction: row;
-    justify-content: space-between;
-  }
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .grid-product {
   padding: 0px;
+  flex: 1 0 50%;
+}
+
+@media screen and (min-width:480px) {
+  section.products > div {
+    flex-direction: row;
+  }
+  .grid-product {
+    padding: 10px;
+  }
+}
+
+@media screen and (min-width:768px) {
+  .grid-product {
+    padding: 0px;
+    flex: 1;
+  }
 }
 
 .grid-product .name {
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   letter-spacing: -1px;
 }
 
