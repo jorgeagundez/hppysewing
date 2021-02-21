@@ -43,17 +43,22 @@ const CartProduct = ({product, cart, setCart}) => {
             <div className="cart-data">
                 <p className="name">{name}</p>
                 <p className="description">{description}</p>
-                <p>Precio <strong>{price} €</strong> <span>(IVA inc.)</span></p>
+                <p>Precio: <strong>{price} €</strong> / unidad</p>
                 <p>Cantidad: <strong>{quantity} </strong>{quantity === 1 ? 'unidad' : 'unidades'}</p>
-                <button
-                    onClick={() => deleteFromCart()}
-                >Borrar del carrito</button>
-                <button
-                    onClick={() => removeOne()}
-                >-</button>
-                <button
-                    onClick={() => addOne()}
-                >+</button>
+                <p>Subtotal: <strong>{quantity * price} €</strong><span>(IVA inc.)</span></p>
+                <div className="actions">
+                    <div>
+                        <button
+                            onClick={() => removeOne()}
+                        ><i class="fas fa-minus"></i></button>
+                        <button
+                            onClick={() => addOne()}
+                        ><i class="fas fa-plus"></i></button>
+                    </div>
+                    <button
+                        onClick={() => deleteFromCart()}
+                    ><i class="far fa-trash-alt"></i></button>
+                </div>
             </div>
         </div>
     )

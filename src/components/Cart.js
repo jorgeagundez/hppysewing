@@ -54,10 +54,12 @@ const Cart = ({cart, setCart}) => {
                             ))}
                         </ul>
                         <div>
-                            <p>Precio total: {getTotalPrice()} €</p>
+                            <p>Precio total: <strong>{getTotalPrice()} €</strong> <span>(IVA inc.)</span></p>
                         </div>
 
-                        <button>Realizar pedido</button>
+                        <button
+                            className="cta-pp"
+                        >Realizar pedido</button>
                     </Fragment>
                 :
                     <p>No hay productos en el carrito</p>
