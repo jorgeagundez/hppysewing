@@ -45,7 +45,7 @@ const Cart = ({cart, setCart}) => {
                 <i className="fas fa-shopping-cart"></i><span>{getTotalItems()}</span>
             </button>
             <div
-                className={ toggle ? "items open" : "items"}
+                className={ toggle ? "wrapper items open" : "wrapper items"}
             >
                 <Fragment>
                 {cart.length > 0
