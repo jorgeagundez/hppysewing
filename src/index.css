@@ -66,3 +66,21 @@ button {
 .hide {
   display:none;
 }
+
+.alert {
+  width: 100%;
+  padding: 1rem;
+}
+
+@media screen and (min-width:768px) {
+  .alert {
+    width: 50%;
+    margin: 0 auto;
+    position: relative;
+    padding: 2rem;
+  }
+}
+
+.text-center {
+  text-align: center;
+}

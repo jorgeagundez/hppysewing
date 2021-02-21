@@ -2,6 +2,7 @@
 
 .h1 {
   font-size: 26px;
+  font-weight: lighter;
 }
 
 
@@ -101,6 +102,17 @@
 
 .cart .icon span {
   padding-left: 10px;
+}
+
+.summary-price {
+  width: 100%;
+}
+
+@media screen and (min-width:768px) {
+  .summary-price {
+    width: 35%;
+    margin-left: 65%;
+  }
 }
 
 .summary-price span.free {

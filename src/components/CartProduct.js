@@ -44,8 +44,8 @@ const CartProduct = ({product, cart, setCart}) => {
                 <p className="name">{type} - {name}</p>
                 <p className="description">{description}</p>
                 <p>Precio: <strong>{price} €</strong> / unidad</p>
-                <p>Cantidad: <strong>{quantity} </strong>{quantity === 1 ? 'unidad' : 'unidades'}</p>
-                <p>Subtotal: <strong>{quantity * price} €</strong><span>(IVA inc.)</span></p>
+                <p><strong>{quantity} </strong>{quantity === 1 ? 'unidad' : 'unidades'}</p>
+                <p>Subtotal: <strong>{quantity * price} €</strong> <span>(IVA inc.)</span></p>
                 <div className="actions">
                     <div>
                         <button

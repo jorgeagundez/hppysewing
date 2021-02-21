@@ -3,7 +3,7 @@ import CartProduct from './CartProduct.js';
 
 const Cart = ({cart, setCart, toggle, toggleClass}) => {
 
-    const freeShipping = 30;
+    const freeShipping = 50;
 
     const getTotalPrice = () => {
         let total = 0;
@@ -64,14 +64,26 @@ const Cart = ({cart, setCart, toggle, toggleClass}) => {
                             <p>Subtotal: <strong>{getTotalPrice()} €</strong></p>
                             <p>Gastos de envío: <strong>{getDeliveryPrice()} €</strong><span className="free">(Gratis a partir de {freeShipping}€)</span></p>
                             <p>Precio total <span>(IVA inc.)</span>: <strong>{getTotalPrice() + getDeliveryPrice()} €</strong></p>
+                            <p>
+                                <span>* Solicitando tu pedido, recibirás información por correo electrónico de la disponibilidad 
+                                y del proceso para encargar los productos seleccionados, sin ningún compromiso. Una vez solitado 
+                                tu pedido, nos pondremos en contacto contigo para concretar la dirección de envío, tiempo de 
+                                entrega y detalles sobre el modo de pago (Bizum o transaferencia bancaria).
+                                </span>
+                            </p>
                         </div>
-
                         <button
                             className="cta-pp mostaza"
-                        >Realizar pedido</button>
+                        >Solicitar pedido *</button>
                     </Fragment>
                 :
-                    <p>No hay productos en el carrito</p>
+                    <Fragment>
+                        <div className="alert">
+                            <p
+                            className="text-center"
+                        >¡Aún no hay productos para poder realizar un pedido! Por favor, vuelve al grid de productos y selecciona al menos uno</p>
+                        </div>
+                    </Fragment>
                 }
                 </Fragment>
             </div>
