@@ -37,7 +37,7 @@ const CartProduct = ({product, cart, setCart}) => {
 
     return (
         <div className="cart-products">
-            <div className="product-img">
+            <div className="cart-img">
                 <img src={process.env.PUBLIC_URL + '/img/' + img} alt="logo" />
             </div>
             <div className="cart-data">
@@ -50,14 +50,17 @@ const CartProduct = ({product, cart, setCart}) => {
                     <div>
                         <button
                             onClick={() => removeOne()}
-                        ><i class="fas fa-minus"></i></button>
+                            className="minus"
+                        ><i className="fas fa-minus"></i></button>
                         <button
                             onClick={() => addOne()}
-                        ><i class="fas fa-plus"></i></button>
+                            className="plus"
+                        ><i className="fas fa-plus"></i></button>
                     </div>
                     <button
                         onClick={() => deleteFromCart()}
-                    ><i class="far fa-trash-alt"></i></button>
+                        className="delete"
+                    ><i className="far fa-trash-alt"></i></button>
                 </div>
             </div>
         </div>

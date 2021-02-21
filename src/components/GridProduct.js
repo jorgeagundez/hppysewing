@@ -2,7 +2,7 @@ import React from 'react';
 
 const GridProduct = ({product, cart, setCart}) => {
 
-    const {name, img, price, description} = product;
+    const {type, name, img, price, description} = product;
 
 
     // TODO: create a State for CartProduct to manage Quantity
@@ -34,8 +34,12 @@ const GridProduct = ({product, cart, setCart}) => {
 
     return (
         <div className="grid-product">
-            <p>{name}</p>
-            <img src={process.env.PUBLIC_URL + '/img/' + img} alt="logo" />
+            <p
+                className="name"
+            ><span>{type}:</span> {name}</p>
+            <div className="product-img">
+                <img src={process.env.PUBLIC_URL + '/img/' + img} alt="logo" />
+            </div>
             <p>Precio: {price} €</p>
             <p>{description}</p>
             <button

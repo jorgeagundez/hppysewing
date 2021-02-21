@@ -18,28 +18,32 @@ function App() {
   const [products] = useState([
     {
       id: 1,
-      name: 'Mini-neceser Flor de Azahar',
+      type: 'Mini-neceser',
+      name: 'Flor de Azahar',
       img: 'product1.jpg',
       price: 12,
       description: 'Mini-neceser con tela vaquera reciclada en el exterior y algodon azul marino en el interior. Tamaño 13x9x5cm'
     },
     {
       id: 2,
-      name: 'Mini-neceser Sandías',
+      type: 'Mini-neceser',
+      name: 'Sandías',
       img: 'product2.jpg',
       price: 12,
       description: 'Mini-neceser con tela de lona de algodón malva en el exterior y estampado de sandías en la solapa e interior. Tamaño 13x9x5cm'
     },
     {
       id: 3,
-      name: 'Mini-neceser grecas cielo',
+      type: 'Mini-neceser',
+      name: 'Grecas cielo',
       img: 'product3.jpg',
       price: 12,
       description: 'Mini-neceser con tela de lona de algodón mostaza en el exterior y estampado de gracas azul en la solapa e interior. Tamaño 13x9x5cm'
     },
     {
       id: 4,
-      name: 'Mini-neceser corazones',
+      type: 'Mini-neceser',
+      name: 'corazones',
       img: 'product4.jpg',
       price: 12,
       description: 'Mini-neceser con tela de lona de algodón blanco roto en el exterior y estampado de corazones en la solapa e interior. Tamaño 13x9x5cm'
@@ -73,7 +77,7 @@ function App() {
           <div className="logo">
             <img src={process.env.PUBLIC_URL + '/img/logo.png'} alt="logo" />
           </div>
-          <div className="name u-wrapper-padding">
+          <div className="u-wrapper-padding">
             <p className="title">Hppysewing</p>
             <p className="subtitle">Tienda virtual</p>
           </div>
@@ -84,7 +88,7 @@ function App() {
         </header>
 
         <section className="products">
-          <h1>Productos disponibles</h1>
+          <h1 className="h1">Productos disponibles</h1>
           <div>
             {products.map(product => (
               <GridProduct

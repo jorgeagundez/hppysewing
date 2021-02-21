@@ -4,6 +4,7 @@ import CartProduct from './CartProduct.js';
 const Cart = ({cart, setCart}) => {
 
     const [toggle, setToggle] = useState(false);
+    const freeShipping = 30;
 
     const getTotalPrice = () => {
         let total = 0;
@@ -12,6 +13,14 @@ const Cart = ({cart, setCart}) => {
         ));
 
         return total;
+    }
+
+    const getDeliveryPrice = () => {
+        if(getTotalPrice() > freeShipping) {
+            return 0;
+        }
+
+        return 5;
     }
 
     const getTotalItems = () => {
@@ -53,8 +62,10 @@ const Cart = ({cart, setCart}) => {
                                 </li>
                             ))}
                         </ul>
-                        <div>
-                            <p>Precio total: <strong>{getTotalPrice()} €</strong> <span>(IVA inc.)</span></p>
+                        <div className="summary-price">
+                            <p>Subtotal: <strong>{getTotalPrice()} €</strong></p>
+                            <p>Gastos de envío: <strong>{getDeliveryPrice()} €</strong><span className="free">(Gratis a partir de {freeShipping}€)</span></p>
+                            <p>Precio total <span>(IVA inc.)</span>: <strong>{getTotalPrice() + getDeliveryPrice()} €</strong></p>
                         </div>
 
                         <button
