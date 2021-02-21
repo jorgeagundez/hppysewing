@@ -6,6 +6,7 @@
 /* ************ */
 :root {
   --header-height: 80px;
+  --cta-pp-color: #ffa800;
 }
 
 @media screen and (min-width:480px) {
@@ -225,7 +226,7 @@ section.products > div {
 }
 
 .cta-pp {
-  background: #ffa800;
+  background: var(--cta-pp-color);
   border-radius: 5px;
   color: white;
   font-weight: bold;
