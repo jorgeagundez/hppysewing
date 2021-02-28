@@ -2,33 +2,32 @@ import React from 'react';
 
 const GridProduct = ({product, cart, setCart}) => {
 
-    const {type, name, img, price, description} = product;
-
-
-    // TODO: create a State for CartProduct to manage Quantity
-    const setProductQuantity = () => {
-        if (product.quantity === undefined) {
-            product.quantity = 1;
-        } else {
-            product.quantity++;
-        }
-    }
+    const {id, type, name, img, price, description} = product;
 
     const addToCart = () => {
-
-        setProductQuantity();
-
-        let productIsAlready = cart.includes(product);
+        let productIsAlready = false;
+        cart.forEach(cartProduct => {
+            if (cartProduct.id === id) {
+                productIsAlready = true;
+            }
+        });
 
         if (!productIsAlready) {
+            product.quantity = 1;
             setCart([
                 ...cart,
                 product
             ]);
         } else {
-            setCart([
-                ...cart
-            ]);
+            const newCart = cart.map(cartProduct => {
+                if (cartProduct.id === id) {
+                    cartProduct.quantity++;
+                }
+
+                return cartProduct;
+            });
+
+            setCart(newCart);
         }
     }
 

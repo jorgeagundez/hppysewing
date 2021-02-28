@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment } from 'react';
 import CartProduct from './CartProduct.js';
 
 const Cart = ({cart, setCart, toggle, toggleClass}) => {
@@ -53,6 +53,7 @@ const Cart = ({cart, setCart, toggle, toggleClass}) => {
                             {cart.map(product => (
                                 <li key={product.id}>
                                     <CartProduct
+                                        key={product.id}
                                         product={product}
                                         cart={cart}
                                         setCart={setCart}

@@ -18,9 +18,9 @@ function App() {
       version
     )
   }
-
   const [dataBaseVersion] = useState(calculateDataBaseVersion(manualVersion));
-  const [products] = useState([
+
+  const products = [
     {
       id: 1,
       type: 'Mini-neceser',
@@ -53,8 +53,7 @@ function App() {
       price: 12,
       description: 'Mini-neceser con tela de lona de algodón blanco roto en el exterior y estampado de corazones en la solapa e interior. Tamaño 13x9x5cm'
     },
-  ]);
-
+  ];
 
   let cartInicial = JSON.parse(localStorage.getItem('cart'));
   let cartInicialVersion = JSON.parse(localStorage.getItem('cartVersion'));
