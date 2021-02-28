@@ -81,7 +81,7 @@
 }
 
 
-/* Section Grid Products */
+/* Section Cart Products */
 /* ********************* */
 
 .cart {
@@ -298,6 +298,10 @@ section.products > div {
 .grid-product button {
   position: absolute;
   bottom: 0;
+}
+
+.product-img img {
+  border-radius: 7px;
 }
 
 
