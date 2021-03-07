@@ -32,7 +32,7 @@ const Cart = ({cart, setCart, toggle, toggleClass}) => {
     }
 
     const emailSubject = () => {
-        return `Solicitud%20de%20pedido%20tienda%20online`;
+        return `Solicitud%20de%20pedido%20tienda%20online%20hppysewing`;
     }
 
     const emailBody = () => {
