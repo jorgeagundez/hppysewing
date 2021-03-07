@@ -31,6 +31,37 @@ const Cart = ({cart, setCart, toggle, toggleClass}) => {
         return items;
     }
 
+    const emailSubject = () => {
+        return `Solicitud%20de%20pedido%20tienda%20online`;
+    }
+
+    const emailBody = () => {
+        let body = '¡Hola!%0D%0A%0D%0AMe%20gustaría%20solicitar%20un%20pedido%20con%20los%20siguientes%20productos:%0D%0A%0D%0A';
+        cart.forEach((product, index) => {
+            let line = `${index + 1}%20-%20Producto%20(Ref.${product.id}):%0D%0A`;
+            line = `${line}----------------------------%0D%0A`;
+            line = `${line}Nombre:%20${product.type}%20${product.name}%0D%0A`;
+            line = `${line}Precio%20por%20unidad%20(IVA%20inc.):%20${product.price}€%0D%0A`;
+            line = `${line}Cantidad:%20${product.quantity}%0D%0A%0D%0A`;
+            body = body + line;
+        });
+
+        body = `${body}%0D%0ADesglose de precios:%0D%0A`;
+        body = `${body}************************%0D%0A`;
+
+        cart.forEach((product, index) => {
+            body = `${body}Producto%20${index + 1}%20(${product.quantity}x${product.price}€):............${product.quantity * product.price}€%0D%0A`;
+        });
+
+        body = `${body}%0D%0ASubtotal:..............................${getTotalPrice()}€%0D%0A`;
+        body = `${body}Gastos%20de%20envío%20(*):..............${getDeliveryPrice()}€%0D%0A`;
+        body = `${body}Precio%20total%20(IVA inc.):..........${getTotalPrice() + getDeliveryPrice()}€%0D%0A`;
+        body = `${body}%0D%0A(*)%20Gratis%20a%20partir%20de%20${freeShipping}€%0D%0A%0D%0A`;
+        body = `${body}%0D%0AMuchas%20gracias`;
+
+        return body;
+    }
+
     return (
         <div className="cart">
             <button
@@ -73,9 +104,11 @@ const Cart = ({cart, setCart, toggle, toggleClass}) => {
                                 </span>
                             </p>
                         </div>
-                        <button
+
+                        <a
+                            href={"mailto:hppysewinginfo@gmail.com?Subject=" + emailSubject() + "&body=" + emailBody()}
                             className="cta-pp mostaza"
-                        >Solicitar pedido *</button>
+                        >Solicitar pedido *</a>
                     </Fragment>
                 :
                     <Fragment>
