@@ -8,7 +8,7 @@ import 'swiper/components/navigation/navigation.min.css';
 
 const GridProduct = ({product, cart, setCart}) => {
 
-    const {id, type, name, img1, img2, img3, img4, price, description} = product;
+    const {id, type, name, images, price, description} = product;
 
     const addToCart = () => {
         let productIsAlready = false;
@@ -45,17 +45,15 @@ const GridProduct = ({product, cart, setCart}) => {
                 className="name"
             >{name}</p>
             <div className="product-img">
-                {/* <img src={process.env.PUBLIC_URL + '/img/' + img1} alt="logo" /> */}
                 <Swiper
                     spaceBetween={5}
                     slidesPerView={1}
                     navigation
                     pagination={{ clickable: true }}
                     >
-                    <SwiperSlide><img src={process.env.PUBLIC_URL + '/img/' + img1} alt="logo" /></SwiperSlide>
-                    <SwiperSlide><img src={process.env.PUBLIC_URL + '/img/' + img2} alt="logo" /></SwiperSlide>
-                    <SwiperSlide><img src={process.env.PUBLIC_URL + '/img/' + img3} alt="logo" /></SwiperSlide>
-                    <SwiperSlide><img src={process.env.PUBLIC_URL + '/img/' + img4} alt="logo" /></SwiperSlide>
+                    <SwiperSlide><img src={process.env.PUBLIC_URL + '/img/' + images.img1} alt="image1" /></SwiperSlide>
+                    <SwiperSlide><img src={process.env.PUBLIC_URL + '/img/' + images.img2} alt="image2" /></SwiperSlide>
+                    <SwiperSlide><img src={process.env.PUBLIC_URL + '/img/' + images.img3} alt="image3" /></SwiperSlide>
                 </Swiper>
             </div>
             <p>Tipo: {type}</p>

@@ -97,9 +97,9 @@ const Cart = ({cart, setCart, toggle, toggleClass}) => {
                             <p>Gastos de envío: <strong>{getDeliveryPrice()} €</strong><span className="free">(Gratis a partir de {freeShipping}€)</span></p>
                             <p>Precio total <span>(IVA inc.)</span>: <strong>{getTotalPrice() + getDeliveryPrice()} €</strong></p>
                             <p>
-                                <span>* Solicitando tu pedido, recibirás información por correo electrónico de la disponibilidad 
-                                y del proceso para encargar los productos seleccionados, sin ningún compromiso. Una vez solitado 
-                                tu pedido, nos pondremos en contacto contigo para concretar la dirección de envío, tiempo de 
+                                <span>* Solicitando tu pedido, recibirás información por correo electrónico de la disponibilidad
+                                y del proceso para finalizar el encargo de los productos seleccionados, sin ningún compromiso. Una vez confirmado
+                                tu pedido, volveremos a ponernos en contacto contigo para concretar la dirección de envío, tiempo de
                                 entrega y detalles sobre el modo de pago (Bizum o transaferencia bancaria).
                                 </span>
                             </p>

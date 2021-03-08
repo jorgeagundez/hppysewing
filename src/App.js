@@ -12,7 +12,7 @@ function App() {
     setToggle(!toggle);
   }
   
-  let manualVersion = ['20','02','2021','20','54'];
+  let manualVersion = ['08','03','2021','01','22'];
   const calculateDataBaseVersion = (manualVersion) => {
     let version = manualVersion.reduce((a, b) => a + b);
     return (
