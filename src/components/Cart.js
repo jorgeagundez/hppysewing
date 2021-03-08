@@ -15,7 +15,7 @@ const Cart = ({cart, setCart, toggle, toggleClass}) => {
     }
 
     const getDeliveryPrice = () => {
-        if(getTotalPrice() > freeShipping) {
+        if(getTotalPrice() >= freeShipping) {
             return 0;
         }
 
