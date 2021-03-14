@@ -40,7 +40,7 @@ const GridProduct = ({product, cart, setCart}) => {
     SwiperCore.use([Navigation, Pagination]);
 
     return (
-        <div className="grid-product">
+        <div className="grid--product">
             <p
                 className="name"
             >{name}</p>
@@ -62,7 +62,7 @@ const GridProduct = ({product, cart, setCart}) => {
             <button
                 onClick={() => addToCart()}
                 className="cta-pp bluesky"
-            >Añadir al carrito</button>
+            >Añadir al pedido</button>
         </div>
     )
 }

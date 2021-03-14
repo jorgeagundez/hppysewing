@@ -12,7 +12,7 @@ function App() {
     setToggle(!toggle);
   }
   
-  let manualVersion = ['08','03','2021','01','22'];
+  let manualVersion = ['14','03','2021','01','22'];
   const calculateDataBaseVersion = (manualVersion) => {
     let version = manualVersion.reduce((a, b) => a + b);
     return (
@@ -62,8 +62,12 @@ function App() {
         <section 
           className={ toggle ? "products hide" : "products"}
         >
-          <h1 className="h1">Productos disponibles</h1>
-          <div>
+          <h1 className="h1">Bienvenid@s a la tienda <span>hppysewing</span></h1>
+          <h2 className="h2">Marca local Catalana de diseño y confección de complementos hechos a mano por encargo.</h2>
+          <p>Aquí encontrarás piezas únicas realizadas de forma artesanal que podrás encargar de forma fácil y sin ningún compromiso.</p>
+          <p>También realizamos encargos personalizados, para mas información ponte en contacto a través de nuestra cuenta de instagram <a href="https://www.instagram.com/hppysewing/" rel="noreferrer" target="_blank">@hppysewing</a></p>
+          <div className="grid">
+            <h2 className="h2"><stront>Productos disponibles:</stront></h2>
             {products.map(product => (
               <GridProduct
                 key={product.id}
@@ -73,6 +77,7 @@ function App() {
               />
             ))}
           </div>
+          <p>Pronto más productos disponibles, mientras tanto no dejes de visitarnos en <a href="https://www.instagram.com/hppysewing/" rel="noreferrer" target="_blank">@hppysewing</a></p>
         </section>
         {/* <footer className="footer">
           <nav>

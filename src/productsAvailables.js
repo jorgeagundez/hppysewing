@@ -2,7 +2,7 @@ const products = [
     {
       id: 1,
       type: 'Bolsa saco',
-      name: 'Vaquera estampada azul',
+      name: 'Saco Cuadrículas vaqueras',
       images: {
         img1: 'bolsa-saco-vaquera1.jpg',
         img2: 'bolsa-saco-vaquera2.jpg',
@@ -14,7 +14,7 @@ const products = [
     {
       id: 2,
       type: 'Mini-neceser',
-      name: 'Grecas cielo',
+      name: 'Grecas tonos azul',
       images: {
         img1: 'grecas1.jpg',
         img2: 'grecas2.jpg',
@@ -26,7 +26,7 @@ const products = [
     {
       id: 3,
       type: 'Mini-neceser',
-      name: 'corazones',
+      name: 'Corazones',
       images: {
         img1: 'corazones1.jpg',
         img2: 'corazones2.jpg',
@@ -50,7 +50,7 @@ const products = [
     {
       id: 5,
       type: 'Mini-neceser',
-      name: 'Vaquera estampada',
+      name: 'Cuadrículas vaquera',
       images: {
         img1: 'vaquera1.jpg',
         img2: 'vaquera2.jpg',

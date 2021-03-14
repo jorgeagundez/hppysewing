@@ -19,7 +19,7 @@ const Cart = ({cart, setCart, toggle, toggleClass}) => {
             return 0;
         }
 
-        return 5;
+        return 6;
     }
 
     const getTotalItems = () => {
@@ -41,7 +41,7 @@ const Cart = ({cart, setCart, toggle, toggleClass}) => {
             let line = `${index + 1}%20-%20Producto%20(Ref.${product.id}):%0D%0A`;
             line = `${line}----------------------------%0D%0A`;
             line = `${line}Nombre:%20${product.type}%20${product.name}%0D%0A`;
-            line = `${line}Precio%20por%20unidad%20(IVA%20inc.):%20${product.price}€%0D%0A`;
+            line = `${line}Precio%20por%20unidad%20:%20${product.price}€%0D%0A`;
             line = `${line}Cantidad:%20${product.quantity}%0D%0A%0D%0A`;
             body = body + line;
         });
@@ -55,7 +55,7 @@ const Cart = ({cart, setCart, toggle, toggleClass}) => {
 
         body = `${body}%0D%0ASubtotal:..............................${getTotalPrice()}€%0D%0A`;
         body = `${body}Gastos%20de%20envío%20(*):..............${getDeliveryPrice()}€%0D%0A`;
-        body = `${body}Precio%20total%20(IVA inc.):..........${getTotalPrice() + getDeliveryPrice()}€%0D%0A`;
+        body = `${body}Precio%20total:..........${getTotalPrice() + getDeliveryPrice()}€%0D%0A`;
         body = `${body}%0D%0A(*)%20Gratis%20a%20partir%20de%20${freeShipping}€%0D%0A%0D%0A`;
         body = `${body}%0D%0AMuchas%20gracias`;
 
@@ -95,12 +95,12 @@ const Cart = ({cart, setCart, toggle, toggleClass}) => {
                         <div className="summary-price">
                             <p>Subtotal: <strong>{getTotalPrice()} €</strong></p>
                             <p>Gastos de envío: <strong>{getDeliveryPrice()} €</strong><span className="free">(Gratis a partir de {freeShipping}€)</span></p>
-                            <p>Precio total <span>(IVA inc.)</span>: <strong>{getTotalPrice() + getDeliveryPrice()} €</strong></p>
+                            <p>Precio total: <strong>{getTotalPrice() + getDeliveryPrice()} €</strong></p>
                             <p>
                                 <span>* Solicitando tu pedido, recibirás información por correo electrónico de la disponibilidad
                                 y del proceso para finalizar el encargo de los productos seleccionados, sin ningún compromiso. Una vez confirmado
                                 tu pedido, volveremos a ponernos en contacto contigo para concretar la dirección de envío, tiempo de
-                                entrega y detalles sobre el modo de pago (Bizum o transaferencia bancaria).
+                                entrega y detalles sobre el modo de pago (Bizum o transferencia bancaria). Sólo envíos a España (Península Ibérica)
                                 </span>
                             </p>
                         </div>
@@ -115,7 +115,7 @@ const Cart = ({cart, setCart, toggle, toggleClass}) => {
                         <div className="alert">
                             <p
                             className="text-center"
-                        >¡Aún no hay productos para poder realizar un pedido! Por favor, vuelve al grid de productos y selecciona al menos uno</p>
+                        >¡Aún no hay productos para poder realizar un pedido! Por favor, vuelve al listado de productos y selecciona al menos uno</p>
                         </div>
                     </Fragment>
                 }
