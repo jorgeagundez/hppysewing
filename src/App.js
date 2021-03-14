@@ -62,22 +62,28 @@ function App() {
         <section 
           className={ toggle ? "products hide" : "products"}
         >
-          <h1 className="h1">Bienvenid@s a la tienda <span>hppysewing</span></h1>
-          <h2 className="h2">Marca local Catalana de diseño y confección de complementos hechos a mano por encargo.</h2>
-          <p>Aquí encontrarás piezas únicas realizadas de forma artesanal que podrás encargar de forma fácil y sin ningún compromiso.</p>
-          <p>También realizamos encargos personalizados, para mas información ponte en contacto a través de nuestra cuenta de instagram <a href="https://www.instagram.com/hppysewing/" rel="noreferrer" target="_blank">@hppysewing</a></p>
+          <div className="intro">
+            <h1 className="h1">Bienvenid@s a la tienda <span>hppysewing</span></h1>
+            <h2 className="h2">Marca local Catalana de diseño y confección de complementos hechos a mano por encargo.</h2>
+            <p>Aquí encontrarás piezas únicas realizadas de forma artesanal que podrás encargar de forma fácil y sin ningún compromiso.</p> 
+            <p>También realizamos encargos personalizados, para mas información ponte en contacto a través de nuestra cuenta de instagram <a href="https://www.instagram.com/hppysewing/" rel="noreferrer" target="_blank">@hppysewing</a></p>
+          </div>
           <div className="grid">
             <h2 className="h2"><stront>Productos disponibles:</stront></h2>
-            {products.map(product => (
-              <GridProduct
-                key={product.id}
-                product={product}
-                cart={cart}
-                setCart={setCart}
-              />
-            ))}
+            <div>
+              {products.map(product => (
+                <GridProduct
+                  key={product.id}
+                  product={product}
+                  cart={cart}
+                  setCart={setCart}
+                />
+              ))}
+            </div>
           </div>
-          <p>Pronto más productos disponibles, mientras tanto no dejes de visitarnos en <a href="https://www.instagram.com/hppysewing/" rel="noreferrer" target="_blank">@hppysewing</a></p>
+          <div className="u-wrapper-padding">
+            <p>Pronto más productos disponibles, mientras tanto no dejes de visitarnos en <a href="https://www.instagram.com/hppysewing/" rel="noreferrer" target="_blank">@hppysewing</a></p>
+          </div>
         </section>
         {/* <footer className="footer">
           <nav>
