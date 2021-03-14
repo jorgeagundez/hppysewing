@@ -54,6 +54,7 @@ const GridProduct = ({product, cart, setCart}) => {
                     <SwiperSlide><img src={process.env.PUBLIC_URL + '/img/' + images.img1} alt="image1" /></SwiperSlide>
                     <SwiperSlide><img src={process.env.PUBLIC_URL + '/img/' + images.img2} alt="image2" /></SwiperSlide>
                     <SwiperSlide><img src={process.env.PUBLIC_URL + '/img/' + images.img3} alt="image3" /></SwiperSlide>
+                    <SwiperSlide><img src={process.env.PUBLIC_URL + '/img/' + images.img4} alt="image4" /></SwiperSlide>
                 </Swiper>
             </div>
             <p>Tipo: {type}</p>
