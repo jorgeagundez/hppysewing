@@ -1,81 +1,95 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import GridProduct from './components/GridProduct.js';
 import Cart from './components/Cart.js';
+import products from './productsAvailables.js';
 
 import './App.css';
 
 function App() {
 
-  const [products] = useState([
-    {
-      id: 1,
-      name: 'Producto 1',
-      img: 'product1.jpg',
-      price: '12',
-      description: 'Descripción de producto 1'
-    },
-    {
-      id: 2,
-      name: 'Producto 2',
-      img: 'product2.jpg',
-      price: '12',
-      description: 'Descripción de producto 2'
-    },
-    {
-      id: 3,
-      name: 'Producto 3',
-      img: 'product3.jpg',
-      price: '12',
-      description: 'Descripción de producto 3'
-    },
-    {
-      id: 4,
-      name: 'Producto 4',
-      img: 'product4.jpg',
-      price: '12',
-      description: 'Descripción de producto 4'
-    },
-  ]);
+  const [toggle, setToggle] = useState(false);
+  const toggleClass = () => {
+    setToggle(!toggle);
+  }
+  
+  let manualVersion = ['26','03','2021','18','03'];
+  const calculateDataBaseVersion = (manualVersion) => {
+    let version = manualVersion.reduce((a, b) => a + b);
+    return (
+      version
+    )
+  }
+  const [dataBaseVersion] = useState(calculateDataBaseVersion(manualVersion));
 
-  const [cart, setCart] = useState([]);
+  let cartInicial = JSON.parse(localStorage.getItem('cart'));
+  let cartInicialVersion = JSON.parse(localStorage.getItem('cartVersion'));
+
+  if (!cartInicial || cartInicialVersion !== dataBaseVersion) {
+    cartInicial = [];
+  }
+
+  const [cart, setCart] = useState(cartInicial);
+  const [cartVersion] = useState(dataBaseVersion);
+
+  useEffect(() => {
+    if (cartInicial) {
+      localStorage.setItem('cart', JSON.stringify(cart));
+      localStorage.setItem('cartVersion', JSON.stringify(cartVersion));
+    } else {
+      localStorage.setItem('cart', []);
+    }
+  }, [cart, cartInicial, cartVersion])
 
   return (
     <Fragment>
       <div className="wrapper">
         <header className="header">
-          <div className="wrapper-logo">
-            <div className="logo">
-              <img src={process.env.PUBLIC_URL + '/img/logo.png'} alt="logo" />
-            </div>
-            <div className="u-wrapper-padding">
-              <p className="title">Hppysewing</p>
-              <p className="subtitle">Tienda virtual</p>
-            </div>
+          <div className="logo">
+            <img src={process.env.PUBLIC_URL + '/img/logo.png'} alt="logo" />
+          </div>
+          <div className="u-wrapper-padding">
+            <p className="title">Hppysewing</p>
+            <p className="subtitle">Tienda virtual</p>
           </div>
           <Cart
             cart={cart}
             setCart={setCart}
+            toggle={toggle}
+            toggleClass={toggleClass}
           />
         </header>
 
-        <section className="products">
-          <h1>Productos disponibles</h1>
-          <div>
-            {products.map(product => (
-              <GridProduct
-                key={product.id}
-                product={product}
-                cart={cart}
-                setCart={setCart}
-              />
-            ))}
+        <section 
+          className={ toggle ? "products hide" : "products"}
+        >
+          <div className="intro">
+            <h1 className="h1">Bienvenid@s a la tienda <span>hppysewing</span></h1>
+            <h2 className="h2">Marca local Catalana de diseño y confección de complementos hechos a mano por encargo.</h2>
+            <p>Aquí encontrarás piezas únicas realizadas de forma artesanal que podrás encargar de forma fácil y sin ningún compromiso.</p> 
+            <p>También realizamos encargos personalizados, para mas información ponte en contacto a través de nuestra cuenta de instagram <a href="https://www.instagram.com/hppysewing/" rel="noreferrer" target="_blank">@hppysewing</a></p>
+          </div>
+          <div className="grid">
+            <h2 className="h2"><stront>Productos disponibles:</stront></h2>
+            <div>
+              {products.map(product => (
+                <GridProduct
+                  key={product.id}
+                  product={product}
+                  cart={cart}
+                  setCart={setCart}
+                />
+              ))}
+            </div>
+          </div>
+          <div className="u-wrapper-padding">
+            <p>Pronto más productos disponibles, mientras tanto no dejes de visitarnos en <a href="https://www.instagram.com/hppysewing/" rel="noreferrer" target="_blank">@hppysewing</a></p>
           </div>
         </section>
-        <footer className="footer">
+        {/* <footer className="footer">
           <nav>
             Redes sociales
           </nav>
-        </footer>
+        </footer> */}
       </div>
     </Fragment>
   );

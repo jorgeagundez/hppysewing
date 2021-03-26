@@ -2,7 +2,7 @@ import React from 'react';
 
 const CartProduct = ({product, cart, setCart}) => {
 
-    const {id, name, price, description, quantity} = product;
+    const {id, name, type, images, price, description, quantity} = product;
 
     const deleteFromCart = () => {
         product.quantity = 0;
@@ -36,20 +36,33 @@ const CartProduct = ({product, cart, setCart}) => {
     }
 
     return (
-        <div className="grid-product">
-            <p>{name}</p>
-            <p>Precio: {price} €</p>
-            <p>{description}</p>
-            <p>Cantidad: {quantity}</p>
-            <button
-                onClick={() => deleteFromCart()}
-            >Borrar del carrito</button>
-            <button
-                onClick={() => removeOne()}
-            >-</button>
-            <button
-                onClick={() => addOne()}
-            >+</button>
+        <div className="cart-products">
+            <div className="cart-img">
+                <img src={process.env.PUBLIC_URL + '/img/' + images.img1} alt="logo" />
+            </div>
+            <div className="cart-data">
+                <p className="name">{type} - {name}</p>
+                <p className="description">{description}</p>
+                <p>Precio: <strong>{price} €</strong> / unidad</p>
+                <p><strong>{quantity} </strong>{quantity === 1 ? 'unidad' : 'unidades'}</p>
+                <p>Subtotal: <strong>{quantity * price} €</strong></p>
+                <div className="actions">
+                    <div>
+                        <button
+                            onClick={() => removeOne()}
+                            className="minus"
+                        ><i className="fas fa-minus"></i></button>
+                        <button
+                            onClick={() => addOne()}
+                            className="plus"
+                        ><i className="fas fa-plus"></i></button>
+                    </div>
+                    <button
+                        onClick={() => deleteFromCart()}
+                        className="delete"
+                    ><i className="far fa-trash-alt"></i></button>
+                </div>
+            </div>
         </div>
     )
 }
