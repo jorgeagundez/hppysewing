@@ -9,7 +9,7 @@ const products = [
         img3: 'motas3.jpg',
         img4: 'motas2.jpg'
       },
-      price: 9.99,
+      price: 14.99,
       description: 'Neceser de tela de lona de algodón estampado con motas blancas sobre fondo azul marino y polipiel blanco en la base. Interior de un sólo compartimento de tela blanca de algodón. Cierre con cremallera. Tamaño 25x20x10 cm y forma triangular'
     },
     {
