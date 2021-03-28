@@ -63,6 +63,10 @@ button {
   outline: inherit;
 }
 
+button.disabled {
+  background: grey;
+}
+
 .hide {
   display:none;
 }

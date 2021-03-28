@@ -8,7 +8,7 @@ import 'swiper/components/navigation/navigation.min.css';
 
 const GridProduct = ({product, cart, setCart}) => {
 
-    const {id, type, name, images, price, description} = product;
+    const {id, type, name, images, price, description, stock} = product;
 
     const addToCart = () => {
         let productIsAlready = false;
@@ -60,10 +60,20 @@ const GridProduct = ({product, cart, setCart}) => {
             <p>Tipo: {type}</p>
             <p>Precio: <strong>{price} €</strong></p>
             <p>{description}</p>
+            { stock > 0
+            ?
             <button
                 onClick={() => addToCart()}
                 className="cta-pp bluesky"
             >Añadir al pedido</button>
+            :
+            <div>
+                <p>Estado: <strong>vendido</strong></p>
+                <button
+                    className="cta-pp disabled"
+                >No disponible</button>
+            </div>
+            }
         </div>
     )
 }
